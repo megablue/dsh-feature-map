@@ -1,0 +1,23 @@
+{
+  "name": "dsh-feature-map",
+  "version": "0.2.0",
+  "private": true,
+  "description": "Features-map workflow for DeepSeek Harness: consult docs/features before the source, and scaffold the boilerplate into a new project",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "templates",
+    "cordis.patch.yml"
+  ],
+  "license": "MIT",
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  }
+}

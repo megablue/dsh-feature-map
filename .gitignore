@@ -1,0 +1,13 @@
+# Nothing in this repository is generated: there is no build step and the
+# package declares no dependencies, so a `node_modules` here is a local
+# accident rather than a build input. A profile links this directory instead
+# of installing it.
+node_modules/
+
+# Debug logs from npm and pnpm
+*.log
+
+# Editor and OS noise
+.DS_Store
+Thumbs.db
+desktop.ini

@@ -1,0 +1,13 @@
+# The features-map workflow as a bundle
+
+# This file is the bundle patch: the profile composes it after the in-box
+# bundles and before the user's own cordis.patch.yml, so a profile can disable
+# or reconfigure the row below without editing this package.
+#
+# One row, one plugin. The row id is what a profile targets when it disables
+# the plugin, so it is stable and short rather than derived from the package
+# name.
+
+- insert:
+    - id: feature-map
+      name: "dsh-feature-map"

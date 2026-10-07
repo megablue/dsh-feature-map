@@ -1,0 +1,8 @@
+# LF in the working directory and in history, on every platform, whatever the
+# local `core.autocrlf` says.
+#
+# This is not cosmetic here. The files under `templates/` are read as text and
+# their bytes are what a scaffolded project receives, so a CRLF checkout would
+# change what this plugin hands another project — and the map reader measures
+# sections in bytes, so a checkout could move a section across the size limit.
+* text=auto eol=lf

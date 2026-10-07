@@ -1,0 +1,33 @@
+# The commit gate from AGENTS.md, on every push and pull request.
+#
+# There is no build step, nothing to install and no compiler, so the plugin's
+# linter is `node --check` and its suite is the plain scripts under `scripts/`.
+# Every step below is one of the commands AGENTS.md names, run on the Node the
+# plugin is developed against.
+
+name: gate
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '22'
+      # One file at a time, over whatever is in `lib/` — a list here would go
+      # stale the first time a module is added.
+      - name: syntax
+        run: for file in lib/*.js; do node --check "$file"; done
+      - name: tests
+        run: node scripts/test.mjs
+      - name: smoke
+        run: node scripts/smoke.mjs
