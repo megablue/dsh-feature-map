@@ -9,13 +9,29 @@ disagrees with the code, the code is right. `AGENTS.md` is the process doc,
 This file is the volatile one — it exists so a new session knows *where things
 stand*, not *how they work*.
 
-As of 0.2.0 — 2026-10-07 (the workspace became a git repository, on `main`,
-with the documented gate running in CI; `feature_map_regen` shipped, the live
-acceptance run passed, and the write-seam bug that run found is fixed and
-verified live).
+As of 0.2.0 — 2026-10-09 (the repository is public at
+`github.com/megablue/dsh-feature-map` with `origin` tracking `main`; the README
+now leads *Install* with the copy-paste command and the hub's listing badge; the
+submission to dsh-plugin.org is filed as issue
+[dshplugin/dsh-plugin-hub#138](https://github.com/dshplugin/dsh-plugin-hub/issues/138),
+awaiting the hub's next refresh).
 
 ## State
 
+- **The repository is public and pushes to `origin`.** `main` tracks
+  `https://github.com/megablue/dsh-feature-map`, the `dsh-plugin` topic is set
+  (the hub's crawler key), and CI is green on both pushed commits. The
+  `HANDOFF.md`/`README.md` rename follow-up is `f34a1dc`, the publishable
+  install command is `b35e584`, and the badge line came with them.
+- **`package.json` names the remote**: `repository`, `homepage` and `bugs` are
+  filled in, closing the note that deferred them until a remote existed.
+  `"private": true` stays — it guards publish, not install.
+- **The README's first Install line is a *measured* claim, not a guess.** The
+  `github:` spec was probed in a scratch directory (`pnpm add --dir <scratch>
+  github:megablue/dsh-feature-map` → tarball, bundle patch, `node --check` on
+  the entry) because `npm` refuses the same spec with `EALLOWGIT`. The `dsh` CLI
+  wrapper itself was never driven — it is not on this machine's PATH — so the
+  wrapper is untested even though the underlying install path is proven.
 - **The workspace is a git repository on `main`.** `.gitattributes` pins LF in
   the working directory and in history, `.gitignore` covers `node_modules/` and
   logs, `LICENSE` is MIT (matching `package.json`), and
@@ -89,6 +105,21 @@ verified live).
   ambiguous row) are pinned by fixtures for the same reason.
 - **A slash command** (`/feature-map` printing the index) remains unbuilt and
   deliberately so; `ctx.inject(['commands'], …)` is the pattern.
+- **The hub submission is filed and waiting on the hub.** Issue
+  [dshplugin/dsh-plugin-hub#138](https://github.com/dshplugin/dsh-plugin-hub/issues/138)
+  (Category: Tools & Capabilities) was opened after the topic was set; it is
+  still OPEN with no comment, and
+  `https://dsh-plugin.org/plugins/megablue/dsh-feature-map` still 404s, so the
+  listing has not been generated. The hub claims one refresh cycle, so this is
+  the thing to re-check first next session.
+- **The badge slug is a placeholder until that page exists.** The README carries
+  the hub's template line with `your-owner`/`your-plugin-slug` untouched, which
+  is what the submit page instructs: substitute them "once your plugin is
+  listed". The slug is predictable — detail pages are
+  `/plugins/<owner>/<repo>`, the hub's own being
+  `/plugins/dshplugin/dsh-plugin-hub` — but a guessed URL that looks specific and
+  404s is worse than a placeholder that reads as one. Swap it, do not guess it.
+  The trap is recorded in [packaging.md](docs/features/packaging.md).
 
 ## Known gaps (volatile; the durable traps live in the feature pages)
 
@@ -118,10 +149,11 @@ verified live).
   have a working directory that no longer exists**: a shell needs an explicit
   `workdir`, and relative paths resolve against a dead path. That is inherent to
   moving a directory under a running session, not a defect.
-- **No remote is configured**, so the history is local: `main` holds the
-  initial commit and there is nothing to push. `package.json` therefore has no
-  `repository` field — add one, and a `homepage`/`bugs` pair, when a remote
-  exists rather than guessing a URL now.
+- **The remote is configured and named in the manifest.** `origin` is
+  `https://github.com/megablue/dsh-feature-map`, `main` tracks it, and
+  `package.json` carries `repository`, `homepage` and `bugs`. Nothing local-only
+  remains about the remote. Pushing is a plain `git push`, and the CI workflow is
+  what a reader sees on GitHub rather than a machine name.
 - The install lives in the profile, not here: `~/.dsh/profiles/desktop`
   `package.json` gained `dsh-feature-map` and `pnpm-lock.yaml` was written.
   Removing the bundle from the profile is a plugin-manager action, not a file

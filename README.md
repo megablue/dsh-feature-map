@@ -52,6 +52,8 @@ Compatibility & permissions: targets DSH `0.2.0-rc.2`, local workspaces. Reads
 filesystem seam under the profile's sandbox policy. No dependencies, no peer
 dependencies, no network calls.
 
+[![Listed on dsh-plugin.org](https://dsh-plugin.org/badges/listed.svg)](https://dsh-plugin.org/plugins/your-owner/your-plugin-slug)
+
 ## Starting a new project
 
 Two steps: get the documents, then fill in the parts only you can answer.

@@ -81,6 +81,16 @@ import *failed* is retried after a toggle, which is how the first
   load-bearing outside this repo: dsh-plugin.org refuses to list a repository
   whose README does not carry a `dsh plugin --profile … add <package>` command,
   so deleting it as noise un-lists the plugin.
+- **The hub's listing badge goes in before it can point at the listing.** The
+  submit page's instruction is to paste
+  `[![Listed on dsh-plugin.org](…/badges/listed.svg)](https://dsh-plugin.org/plugins/your-owner/your-plugin-slug)`
+  into the README with the template slug untouched, and to substitute `your-owner`
+  and `your-plugin-slug` "once your plugin is listed". So the badge link 404s
+  until then, and that is the documented state rather than a mistake to fix.
+  The slug is predictable — listings sit at `/plugins/<owner>/<repo>`, and the
+  hub's own is `/plugins/dshplugin/dsh-plugin-hub` — but a guessed URL that
+  looks specific and is wrong is worse than a placeholder that reads as one,
+  so the substitution waits on the real detail page.
 - A failed import is reported by the manager as
   `1 entry did not activate` with `failed to import` and nothing else. The real
   error is not in that message; reproduce it by importing the entry from the
