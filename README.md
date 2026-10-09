@@ -30,8 +30,12 @@ once per session (see *What you will notice*).
 
 ## Install
 
-The plugin is a DSH **bundle**, so it installs from this directory and takes
-effect in the running app:
+Copy-paste (verified on the `desktop` profile):
+
+    dsh plugin --profile desktop add github:megablue/dsh-feature-map
+
+Or install from source. The plugin is a DSH **bundle**, so it installs from
+this directory and takes effect in the running app:
 
 - In the app's plugin settings, add this directory as a bundle.
 - Or, if you drive the harness from an agent session, install it with the
@@ -42,6 +46,11 @@ effect in the running app:
 A **code** change to the plugin itself needs an application restart: the profile
 does not watch module files, and toggling the plugin row re-applies the patch
 without reloading the module. Editing a *project's* docs needs nothing.
+
+Compatibility & permissions: targets DSH `0.2.0-rc.2`, local workspaces. Reads
+`docs/features/` from the host filesystem; writes go through the harness
+filesystem seam under the profile's sandbox policy. No dependencies, no peer
+dependencies, no network calls.
 
 ## Starting a new project
 

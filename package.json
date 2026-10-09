@@ -15,6 +15,14 @@
     "cordis.patch.yml"
   ],
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/megablue/dsh-feature-map.git"
+  },
+  "homepage": "https://github.com/megablue/dsh-feature-map#readme",
+  "bugs": {
+    "url": "https://github.com/megablue/dsh-feature-map/issues"
+  },
   "dsh": {
     "bundle": {
       "patch": "./cordis.patch.yml"

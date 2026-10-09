@@ -16,7 +16,8 @@ Status: shipped (0.1.0) · Read when: changing `package.json`,
 
 ## Map
 
-- `package.json` — `type: module`, `main: lib/index.js`, `files`, `dsh.bundle`.
+- `package.json` — `type: module`, `main: lib/index.js`, `files`,
+  `repository`/`homepage`/`bugs`, `dsh.bundle`.
 - `cordis.patch.yml` — the one-row insert.
 - `lib/index.js` — `name`, `inject`, `apply`, the exported module surface.
 - `lib/index.js` — `DEFAULT_CONFIG` and `resolveConfig()`, the hand-written
@@ -70,6 +71,16 @@ import *failed* is retried after a toggle, which is how the first
 
 ### Traps
 
+- **The README's install command is a pnpm command, and the reason is measured.**
+  `dsh plugin --profile desktop add github:megablue/dsh-feature-map` resolves —
+  probed with `pnpm add --dir <scratch> github:megablue/dsh-feature-map`, which
+  fetched the tarball, kept the bundle patch and passed `node --check` on the
+  entry. `npm install github:…` on the same machine answers `EALLOWGIT`
+  ("Fetching packages of type git have been disabled"), so a copy-pasted npm
+  invocation is the failure mode this bullet exists for. The line is also
+  load-bearing outside this repo: dsh-plugin.org refuses to list a repository
+  whose README does not carry a `dsh plugin --profile … add <package>` command,
+  so deleting it as noise un-lists the plugin.
 - A failed import is reported by the manager as
   `1 entry did not activate` with `failed to import` and nothing else. The real
   error is not in that message; reproduce it by importing the entry from the
