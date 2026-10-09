@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="docs/assets/header.svg" alt="dsh-feature-map — docs before code: one page per feature so your agent stops grepping and starts knowing" width="860" />
+</p>
+
 # dsh-feature-map
 
 A DeepSeek Harness plugin that makes an agent read your project's documentation
