@@ -36,7 +36,7 @@ effect in the running app:
 - In the app's plugin settings, add this directory as a bundle.
 - Or, if you drive the harness from an agent session, install it with the
   plugin manager pointed at the absolute path of this checkout
-  (`…\projects\workflow`). It links the package, adds the `feature-map` row to
+  (`…\projects\dsh-feature-map`). It links the package, adds the `feature-map` row to
   the profile, and activates it live.
 
 A **code** change to the plugin itself needs an application restart: the profile

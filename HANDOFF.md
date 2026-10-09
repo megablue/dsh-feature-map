@@ -106,6 +106,18 @@ verified live).
 
 ## Local-only state (not on the remote)
 
+- **The checkout is at `C:\Users\mega\projects\dsh-feature-map`**, renamed from
+  `…\projects\workflow` so the directory matches the package name. The move is
+  path-only: the bundle row, the patch, `package.json` and every doc are
+  path-free. Four things named the old path and all four now point at the new
+  one — the profile's `package.json` dependency spec, `pnpm-lock.yaml`,
+  `node_modules/.pnpm/lock.yaml`, and the `node_modules/dsh-feature-map` symlink
+  (all rewritten by re-installing the bundle from the new path), plus
+  workspace `6fc224b0-…` in `~/.dsh/storages/workspace.json`. `README.md`'s
+  install line was the only in-repo mention. **Sessions started before the move
+  have a working directory that no longer exists**: a shell needs an explicit
+  `workdir`, and relative paths resolve against a dead path. That is inherent to
+  moving a directory under a running session, not a defect.
 - **No remote is configured**, so the history is local: `main` holds the
   initial commit and there is nothing to push. `package.json` therefore has no
   `repository` field — add one, and a `homepage`/`bugs` pair, when a remote
