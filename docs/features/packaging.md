@@ -90,7 +90,16 @@ import *failed* is retried after a toggle, which is how the first
   The slug is predictable — listings sit at `/plugins/<owner>/<repo>`, and the
   hub's own is `/plugins/dshplugin/dsh-plugin-hub` — but a guessed URL that
   looks specific and is wrong is worse than a placeholder that reads as one,
-  so the substitution waits on the real detail page.
+  so the substitution waits on the real detail page. It lives in the header
+  strip under the title, beside the other badges, so the edit is one line at
+  the top of the README rather than a hunt.
+- **Six badges in the header strip, and each is either derived or linked.** CI
+  and the version badge are read from the live sources — the `gate` workflow
+  and `package.json` — so neither can drift; the topic and `Listed on` badges
+  link to the GitHub topic page and the hub. License, Node and
+  `dependencies: none` are static claims, which is why the last two link to
+  `ci.yml` and `package.json` respectively: the badge asserts, the link lets a
+  reader check. Every URL was probed with a `200` before it was written down.
 - A failed import is reported by the manager as
   `1 entry did not activate` with `failed to import` and nothing else. The real
   error is not in that message; reproduce it by importing the entry from the

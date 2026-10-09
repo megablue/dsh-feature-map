@@ -3,6 +3,18 @@
 A DeepSeek Harness plugin that makes an agent read your project's documentation
 before it reads your source.
 
+<div align="center">
+
+[![CI](https://github.com/megablue/dsh-feature-map/actions/workflows/ci.yml/badge.svg)](https://github.com/megablue/dsh-feature-map/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](LICENSE)
+[![Version](https://img.shields.io/github/package-json/v/megablue/dsh-feature-map?style=flat-square)](https://github.com/megablue/dsh-feature-map/blob/main/package.json)
+[![Topic: dsh-plugin](https://img.shields.io/badge/topic-dsh--plugin-0e7490.svg?style=flat-square)](https://github.com/topics/dsh-plugin)
+[![Listed on DSH Plugin Hub](https://dsh-plugin.org/badges/listed.svg)](https://dsh-plugin.org/plugins/your-owner/your-plugin-slug)
+[![Node: 22](https://img.shields.io/badge/node-22.x-339933.svg?style=flat-square&logo=node.js&logoColor=white)](https://github.com/megablue/dsh-feature-map/blob/main/.github/workflows/ci.yml)
+[![Dependencies: none](https://img.shields.io/badge/dependencies-none-brightgreen.svg?style=flat-square)](https://github.com/megablue/dsh-feature-map/blob/main/package.json)
+
+</div>
+
 Finding the code for one area usually means grepping the tree, opening three
 files, and working out which parts matter. A feature map replaces that with one
 page per feature — the files, types, tests and traps for that area — so the
@@ -51,8 +63,6 @@ Compatibility & permissions: targets DSH `0.2.0-rc.2`, local workspaces. Reads
 `docs/features/` from the host filesystem; writes go through the harness
 filesystem seam under the profile's sandbox policy. No dependencies, no peer
 dependencies, no network calls.
-
-[![Listed on dsh-plugin.org](https://dsh-plugin.org/badges/listed.svg)](https://dsh-plugin.org/plugins/your-owner/your-plugin-slug)
 
 ## Starting a new project
 
