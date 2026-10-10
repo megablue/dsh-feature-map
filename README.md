@@ -16,6 +16,7 @@ before it reads your source.
 [![Listed on DSH Plugin Hub](https://dsh-plugin.org/badges/listed.svg)](https://dsh-plugin.org/plugins/your-owner/your-plugin-slug)
 [![Node: 22](https://img.shields.io/badge/node-22.x-339933.svg?style=flat-square&logo=node.js&logoColor=white)](https://github.com/megablue/dsh-feature-map/blob/main/.github/workflows/ci.yml)
 [![Dependencies: none](https://img.shields.io/badge/dependencies-none-brightgreen.svg?style=flat-square)](https://github.com/megablue/dsh-feature-map/blob/main/package.json)
+[![Buy me a coffee](https://img.shields.io/badge/buy%20me%20a%20coffee-PayPal-ffdd00.svg?style=flat-square&logo=buymeacoffee&logoColor=black)](https://www.paypal.me/mega3dp)
 
 </div>
 
@@ -255,6 +256,10 @@ This README is for using the plugin. The rest is in the repository:
 - [`AGENTS.md`](AGENTS.md) — how to work on the plugin.
 - [`HANDOFF.md`](HANDOFF.md) — where things currently stand.
 - [`templates/`](templates/) — the boilerplate the plugin hands to a project.
+
+## Buy me a coffee
+
+If this plugin is useful to you, you can [buy me a coffee via PayPal](https://www.paypal.me/mega3dp).
 
 ## License
 

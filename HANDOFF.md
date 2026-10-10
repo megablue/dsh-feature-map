@@ -9,12 +9,13 @@ disagrees with the code, the code is right. `AGENTS.md` is the process doc,
 This file is the volatile one — it exists so a new session knows *where things
 stand*, not *how they work*.
 
-As of 0.2.0 — 2026-10-09 (the repository is public at
+As of 0.2.0 — 2026-10-10 (the repository is public at
 `github.com/megablue/dsh-feature-map` with `origin` tracking `main`; the README
 now leads *Install* with the copy-paste command and the hub's listing badge; the
 submission to dsh-plugin.org is filed as issue
 [dshplugin/dsh-plugin-hub#138](https://github.com/dshplugin/dsh-plugin-hub/issues/138),
-awaiting the hub's next refresh).
+awaiting the hub's next refresh; funding is wired to PayPal in the README and
+`.github/FUNDING.yml`).
 
 ## State
 
@@ -23,6 +24,13 @@ awaiting the hub's next refresh).
   (the hub's crawler key), and CI is green on both pushed commits. The
   `HANDOFF.md`/`README.md` rename follow-up is `f34a1dc`, the publishable
   install command is `b35e584`, and the badge line came with them.
+- **Funding is wired to PayPal.** The README's header strip gained a
+  *Buy me a coffee* badge and the closing section a matching link, and
+  `.github/FUNDING.yml` carries `custom: ["https://www.paypal.me/mega3dp"]` —
+  the row the repository's Sponsor button reads. The badge trap in
+  [packaging.md](docs/features/packaging.md) was rewritten count-free and names
+  the FUNDING row; both URLs were probed before writing (the PayPal link 301s
+  to `paypal.com/paypalme/mega3dp`, 200; the badge is 200/SVG).
 - **`package.json` names the remote**: `repository`, `homepage` and `bugs` are
   filled in, closing the note that deferred them until a remote existed.
   `"private": true` stays — it guards publish, not install.
@@ -128,7 +136,8 @@ awaiting the hub's next refresh).
   second weighting to argue about; an author who dislikes a boundary moves it.
 - A page whose `## How & why` divides but whose largest `###` chunk is still over
   the limit is *reported*, never re-split: the plugin has no level below `###`,
-  and inventing one would be structure the author did not ask for.
+  and inventing one would be structure the author did not ask for. The live
+  instance is `packaging.md → ### Traps` (3,772 B).
 - The chunker treats a bullet as a unit and never cuts inside one, so a single
   bullet larger than the budget is reported rather than broken.
 - The tier list (`What it does`, `Map`, `Tests that pin it`) is a constant in

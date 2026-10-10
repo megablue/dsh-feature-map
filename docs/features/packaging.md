@@ -93,13 +93,15 @@ import *failed* is retried after a toggle, which is how the first
   so the substitution waits on the real detail page. It lives in the header
   strip under the title, beside the other badges, so the edit is one line at
   the top of the README rather than a hunt.
-- **Six badges in the header strip, and each is either derived or linked.** CI
+- **The header strip's badges are each either derived or linked.** CI
   and the version badge are read from the live sources — the `gate` workflow
   and `package.json` — so neither can drift; the topic and `Listed on` badges
   link to the GitHub topic page and the hub. License, Node and
   `dependencies: none` are static claims, which is why the last two link to
   `ci.yml` and `package.json` respectively: the badge asserts, the link lets a
-  reader check. Every URL was probed with a `200` before it was written down.
+  reader check. The `Buy me a coffee` badge and `.github/FUNDING.yml` point at
+  the same PayPal URL; PayPal has no native funding key, so it lives under
+  `custom:`. Every URL was probed with a `200` before it was written down.
 - **The banner is a relative link, so it resolves on GitHub and nowhere else.**
   `docs/assets/header.svg` is referenced from the top of the README; `files`
   ships only `lib`, `templates` and `cordis.patch.yml`, so a published npm page
